@@ -119,7 +119,9 @@ async def main(bot: Client, message: Message):
                 f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
                 parse_mode="Markdown",
                 reply_markup=InlineKeyboardMarkup(
-                    [InlineKeyboardButton("♻️Open Link♻️", url=share_link)]
+                    [[InlineKeyboardButton("♻️Open Link♻️", url=share_link)],
+                     [InlineKeyboardButton("🔊Channel", url="https://t.me/cinesubz"),
+                      InlineKeyboardButton("👨‍💼Group", url="https://t.me/cinesubzchat")]]
                     
                 ),
                 disable_web_page_preview=True
