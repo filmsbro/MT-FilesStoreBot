@@ -75,6 +75,11 @@ async def start(bot: Client, cmd: Message):
             if Config.FORWARD_AS_COPY is True:
                 send_stored_file = await bot.copy_message(chat_id=cmd.from_user.id, from_chat_id=Config.DB_CHANNEL,
                                                           message_id=file_id)
+                buttons = [
+                    [
+                        InlineKeyboardButton('🍿 Channel 🍿', url='t.me/cinesubz')
+                    ]
+                    ]
             elif Config.FORWARD_AS_COPY is False:
                 send_stored_file = await bot.forward_messages(chat_id=cmd.from_user.id, from_chat_id=Config.DB_CHANNEL,
                                                               message_ids=file_id)
