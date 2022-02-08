@@ -120,8 +120,8 @@ async def main(bot: Client, message: Message):
                 parse_mode="Markdown",
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("♻️Open Link♻️", url=share_link)],
-                     [InlineKeyboardButton("🔊Channel", url="https://t.me/cinesubz"),
-                      InlineKeyboardButton("👨‍💼Group", url="https://t.me/cinesubzchat")]]
+                     [InlineKeyboardButton("🔊Channel", url="https://t.me/filmsbrosite"),
+                      InlineKeyboardButton("👨‍💼Group", url="https://t.me/filmsbrochat")]]
                     
                 ),
                 disable_web_page_preview=True
