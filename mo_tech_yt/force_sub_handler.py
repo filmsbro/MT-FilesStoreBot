@@ -20,14 +20,11 @@ async def handle_force_sub(bot, cmd):
     except UserNotParticipant:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**\n\n**Files വേണക്കിൽ അത്യം ഞങ്ങളുടെ Update Channelil ജോയിൻ ചെയ്യണം...!**",
+            text="**Please Join My Updates Channel to use this Bot!",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("🔊 𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔊", url=invite_link.invite_link)
-                    ],
-                    [
-                        InlineKeyboardButton("🎉 𝐒𝐮𝐛𝐬𝐜𝐫𝐢𝐛𝐞𝐫𝐬 𝐘𝐓 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🎉", url="https://youtube.com/channel/UCmGBpXoM-OEm-FacOccVKgQ")
                     ],
                     [
                         InlineKeyboardButton("🔄 𝐑𝐞𝐟𝐫𝐞𝐬𝐡 🔄", callback_data="refreshmeh")
