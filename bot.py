@@ -49,14 +49,14 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🏆 Channel 🏆", url="https://t.me/cinesubz"),
-                        InlineKeyboardButton("✍️ Group ✍️", url="https://t.me/cinesubzchat")
+                        InlineKeyboardButton("🏆 Channel 🏆", url="https://t.me/filmsbrosite"),
+                        InlineKeyboardButton("✍️ Group ✍️", url="https://t.me/filmsbrochat")
                     ],
                     [
                         InlineKeyboardButton("💻 Tutorial Video 💻", url="https://t.me/cinesubz/1784")
                     ],
                     [
-                        InlineKeyboardButton("🍿 Web Site 🍿", url="https://t.me/cinesubz/1784")
+                        InlineKeyboardButton("🍿 Web Site 🍿", url="https://www.filmsbro.com")
                     
                     ]
                 ]
@@ -79,7 +79,7 @@ async def start(bot: Client, cmd: Message):
                 send_stored_file = await bot.forward_messages(chat_id=cmd.from_user.id, from_chat_id=Config.DB_CHANNEL,
                                                               message_ids=file_id)
             await send_stored_file.reply_text(
-                f"**Here is Sharable Link of this file:** https://t.me/{Config.BOT_USERNAME}?start=Films_Bro_{file_id}\n\n__To Retrive the Stored File, just open the link!__",
+                "Powerd By FilmsBro.com❤️",
                 disable_web_page_preview=True, quote=True)
         except Exception as err:
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
