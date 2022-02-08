@@ -109,24 +109,23 @@ async def main(bot: Client, message: Message):
             return
         editable = await message.reply_text("Please wait ...")
         try:
-        forwarded_msg = await message.forward(Config.DB_CHANNEL)
-             file_er_id = str(forwarded_msg.message_id)
-             share_link = f"https://t.me/{Config.BOT_USERNAME}?start=FilmsBro_Films_Bro_{file_er_id}}"
-        await forwarded_msg.reply_text(
-             f"Here is the Permanent Link of your file: {share_link} \n\n",
-            parse_mode="Markdown", disable_web_page_preview=True)
-        await editable.edit(
-            "**Your File Stored in my Database!**\n\n"
-            f"Here is the Permanent Link of your file: {share_link} \n\n"
-            "Just Click the link to get your file!",
-            parse_mode="Markdown",
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open Link", url=share_link)],
-                 [InlineKeyboardButton("BOTs Channel", url="https://t.me/ktbots"),
-                  InlineKeyboardButton("New Updates", url="https://t.me/filmsbrosite")]]
-            ),
-            disable_web_page_preview=True
-        )
+            forwarded_msg = await message.forward(Config.DB_CHANNEL)
+            file_er_id = forwarded_msg.message_id
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=Films_Bro_{file_er_id}"
+            await forwarded_msg.reply_text(
+                 f"Here is the Permanent Link of your file: {share_link} \n\n",
+                parse_mode="Markdown", disable_web_page_preview=True)
+            await editable.edit(
+                f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
+                parse_mode="Markdown",
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("♻️Open Link♻️", url=share_link)],
+                     [InlineKeyboardButton("🔊Channel", url="https://t.me/cinesubz"),
+                      InlineKeyboardButton("👨‍💼Group", url="https://t.me/cinesubzchat")]]
+                    
+                ),
+                disable_web_page_preview=True
+            )
         except FloodWait as sl:
             await asyncio.sleep(sl.x)
             await bot.send_message(
